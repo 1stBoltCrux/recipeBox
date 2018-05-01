@@ -1,9 +1,12 @@
-<div *ngFor="let recipe of recipeArray">
-  <h1>{{recipe.name}}</h1>
-  <h3>Ingredients</h3>
-  <p *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</p>
-  <h3>Instructions</h3>
-  <p *ngFor="let instruction of recipe.instructions">{{instruction}}</p>
+<div *ngFor="let recipe of recipeArray" >
+  <h1 (click)=displaySelect(recipe)>{{recipe.name}}</h1>
+  <div  *ngIf="selectedRecipe === recipe">
+    <h3>Ingredients</h3>
+    <p *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</p>
+    <h3>Instructions</h3>
+    <p *ngFor="let instruction of recipe.instructions">{{instruction}}</p>
+  </div>
+
 </div>
 
 <form>
@@ -11,7 +14,7 @@
   <input [(ngModel)]="ingredientInput" name="ingredient" type="text" placeholder="Add ingredient, separated by ;">
   <input [(ngModel)]="instructionsInput" name="instructions" type="text" placeholder="Add a step">
   <p>{{titleInput}}</p>
-  <p>{{ingredientInput}}</p>
+  <p >{{ingredientInput}}</p>
   <p>{{instructionsInput}}</p>
   <button (click)="recipeAdd(titleInput, ingredientInput, instructionsInput)" type="submit" name="button">submit</button>
 </form>

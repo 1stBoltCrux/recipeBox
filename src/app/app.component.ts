@@ -14,6 +14,10 @@ export class AppComponent {
   new RecipeComponent('Pecan Pie', ['pecans', 'sugar', 'cinnamon', 'butter', 'america', 'love'], ['turn on the oven', 'mix ingredients in the bowl', 'place mix in a pan', 'place pan in the oven'])
 ];
 
+selectedRecipe = null;
+displaySelect(recipe){
+  this.selectedRecipe = recipe;
+}
 recipeAdd(titleInput, ingredientInput, instructionsInput){
   console.log(ingredientInput);
   let ingredientInputSplit = ingredientInput.split(';');
