@@ -11,7 +11,7 @@
 
 <form>
   <input [(ngModel)]="titleInput" type="text" name="title" placeholder="Recipe title">
-  <input [(ngModel)]="ingredientInput" name="ingredient" type="text" placeholder="Add ingredient, separated by ;">
+  <input class="form-control"[(ngModel)]="ingredientInput" name="ingredient" type="text" placeholder="Add ingredient, separated by ;">
   <input [(ngModel)]="instructionsInput" name="instructions" type="text" placeholder="Add a step">
   <p>{{titleInput}}</p>
   <p >{{ingredientInput}}</p>
@@ -20,7 +20,7 @@
 </form>
 
 
-
+<app-recipe *ngFor(1 = let currentComponent of arrayComponents> </app-recipe>
 
 <!-- <h1 *ngFor="let recipe of recipeArray">{{recipe.name}}{{rec}}<button (click)="infoLoop()" >Details!</button></h1>
 <p>{{recipeArray[0].ingredients}}</p> -->
